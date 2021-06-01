@@ -25,13 +25,13 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name="created_at",nullable = false)
+    @Column(name="created_at", nullable = false)
     private Timestamp created_at;
 
-    @Column(name="updated_at",nullable = false)
+    @Column(name="updated_at", nullable = false)
     private Timestamp updated_at;
 
-    @Column(name="content",length = 255,nullable = false)
+    @Column(name="content",length = 255, nullable = false)
     private String content;
 
     public Integer getId() {

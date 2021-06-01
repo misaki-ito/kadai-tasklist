@@ -9,10 +9,10 @@ public class DBUtil {
     private static EntityManagerFactory emf;
 
     public static EntityManager createEntityManager(){
-        return getEantityManagerFactory().createEntityManager();
+        return getEntityManagerFactory().createEntityManager();
     }
 
-    private static EntityManagerFactory getEantityManagerFactory(){
+    private static EntityManagerFactory getEntityManagerFactory(){
         if(emf == null){
             emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
         }
