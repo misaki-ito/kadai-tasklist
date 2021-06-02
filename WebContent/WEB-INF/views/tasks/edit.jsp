@@ -5,7 +5,7 @@
         <h2>id ： ${task.id} のタスク編集ページ</h2>
 
         <form method="POST" action="${pageContext.request.contextPath}/update">
-            <c:import url="_from.jsp"/>
+            <c:import url="_form.jsp"/>
         </form>
 
         <p><a href="${pageContent.request.contextPath}/index">一覧に戻る</a></p>
