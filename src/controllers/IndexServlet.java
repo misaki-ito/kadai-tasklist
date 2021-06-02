@@ -25,13 +25,7 @@ public class IndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EntityManager em = DBUtil.createEntityManager();
 
-        List<Task> tasks = em.createNamedQuery("getAllTasks", Task.class).getResultList();
-
-        em.close();
-
-        request.setAttribute("tasks", tasks);
-
-        /*int page = 1;
+        int page = 1;
         try{
             page = Integer.parseInt(request.getParameter("page"));
         }catch(NumberFormatException e){}
@@ -41,7 +35,7 @@ public class IndexServlet extends HttpServlet {
                               .setMaxResults(10)
                               .getResultList();
 
-        long tasks_count = (long)em.createNamedQuery("getTaskCount",Long.class)
+        long tasks_count = (long)em.createNamedQuery("getTasksCount",Long.class)
                                      .getSingleResult();
 
         em.close();
@@ -50,10 +44,7 @@ public class IndexServlet extends HttpServlet {
         request.setAttribute("tasks_count",tasks_count);
         request.setAttribute("page",page);
 
-        if(request.getSession().getAttribute("flush") != null){
-            request.setAttribute("flush",request.getSession().getAttribute("flush"));
-            request.getSession().removeAttribute("flesh");
-        }*/
+
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tasks/index.jsp");
         rd.forward(request,response);
